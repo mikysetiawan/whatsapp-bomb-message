@@ -1,14 +1,6 @@
 const input = document.querySelectorAll("[contenteditable='true']")[1];
 
 function dispatch(input, message){
-    // var evt = new InputEvent('input', {
-    //     bubbles: true,
-    // });
-    // input.innerHTML = message;
-    // console.log(input);
-    // input.dispatchEvent(evt);
-    // document.querySelector('span[data-icon="send"]').click();
-
 	input.innerText = message;
 	input.dispatchEvent(new InputEvent('input', {
 		inputType: 'insertText',
@@ -19,7 +11,6 @@ function dispatch(input, message){
 		detail: 0,
 	}));
 
-    console.log(document.querySelector('button[data-testid="compose-btn-send"]'));
 	document.querySelector('button[data-testid="compose-btn-send"]').click();
 }
 
